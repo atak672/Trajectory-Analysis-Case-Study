@@ -1,0 +1,19 @@
+Trajectory ID: 128-20080503104400
+Original points: 321
+Simplified points: 44
+Compression ratio: 7.30
+
+Trajectory ID: 010-20081016113953
+Original points: 543
+Simplified points: 2
+Compression ratio: 271.50
+
+Trajectory ID: 115-20080520225850
+Original points: 1330
+Simplified points: 234
+Compression ratio: 5.68
+
+Trajectory ID: 115-20080615225707
+Original points: 1442
+Simplified points: 209
+Compression ratio: 6.90
