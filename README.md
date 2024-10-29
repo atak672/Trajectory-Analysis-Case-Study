@@ -1,31 +1,31 @@
 # Trajectory Analysis Case Study
+**Compiled results and analysis** are available in a PowerPoint file located under the Anlysis folder
+
 
 ## Project Overview
 This project focuses on analyzing, simplifying, and clustering trajectory data to uncover patterns and optimize data processing. Using the GeoLife dataset, the project explores algorithms for identifying high-density hubs, simplifying trajectory paths, and clustering trajectories based on their similarity. Through these tasks, we aimed to balance **computational efficiency** and **accuracy**, experimenting with different techniques to find optimal solutions.
 
 
-**Compiled results and analysis are available in a PowerPoint file located under the Anlysis folder**
-
 ## **Project Structure**
-1. **Task 1: Hub Identification**
+- **Task 1: Hub Identification**
    - Developed an algorithm to identify high-traffic hubs from trajectory points.
    - Implemented a **density function** to calculate the concentration of data points and ensured hubs are separated by a minimum distance.
 
-2. **Task 2: Trajectory Simplification**
+- **Task 2: Trajectory Simplification**
    - Implemented a **greedy algorithm** to reduce the number of points in each trajectory while keeping the shape within an acceptable error threshold.
    - Analyzed the trade-off between **simplification** and **accuracy**, reporting compression ratios for several paths.
 
-3. **Task 3: Comparing Trajectory**
+- **Task 3: Comparing Trajectory**
    - Implemented **Dynamic Time Warping (DTW)** and **Frechet distance** algorithms to compare trajectories.
    - Visualized similarity scores between trajectory pairs to better understand alignment and deviation patterns.
 
-4. **Task 4: Center Trajectories**
+- **Task 4: Center Trajectories**
    - Developed two approaches to compute a representative center trajectory:
      1. **Approach I**: Selected an input trajectory that minimized the sum of DTW distances to all other trajectories.
      2. **Approach II**: Proposed a novel algorithm to compute an average trajectory as a function of time.
    - Visualized and compared the results of both methods to determine which produced better central representations.
 
-5. **Task 5: Clustering Trajectories**
+- **Task 5: Clustering Trajectories**
    - Implemented **Lloyd’s algorithm** to partition trajectories into clusters, each with a representative center trajectory.
    - Designed two seeding strategies—**random** and **custom seeding**—to initialize clusters and evaluated their performance.
    - Visualized clustering results and monitored performance over multiple iterations to recommend the optimal number of clusters.

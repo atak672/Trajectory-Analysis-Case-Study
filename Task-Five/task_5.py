@@ -38,7 +38,7 @@ def random_seeding(trajectories, k):
     # ]
    
     keys = trajectories.keys()
-    center_keys = random.sample(keys, k)
+    center_keys = random.sample(list(keys), k)
     initial_center_trajectories = []
     for c in center_keys:
         initial_center_trajectories.append(trajectories[c])
@@ -88,11 +88,10 @@ def random_lloyds(trajectories, k, t_max):
             for trajectory_id, trajectory_points in trajectory_clusters[i].items():
                 cost += task_4.dtw(center_trajectories[i], trajectory_points)
 
-        print("iter, cost", x, cost)
+        print("(iteration, cost):", "(", x, ", ", cost, ")")
         t_cost[x] = cost
        
         if same_clusters(trajectory_clusters, initial_trajectory_clusters):
-            print("BREAKING")
             return trajectory_clusters, t_cost
         else:
             initial_center_trajectories = center_trajectories
@@ -136,11 +135,10 @@ def optimized_lloyds(trajectories, k, t_max):
             for trajectory_id, trajectory_points in trajectory_clusters[i].items():
                 cost += task_4.dtw(center_trajectories[i], trajectory_points)
 
-        print("iter, cost", x, cost)
+        print("(iteration, cost):", "(", x, ", ", cost, ")")
         t_cost[x] = cost
        
         if same_clusters(trajectory_clusters, initial_trajectory_clusters):
-            print("BREAKING")
             return trajectory_clusters, t_cost
         else:
             initial_center_trajectories = center_trajectories
@@ -203,9 +201,8 @@ def evaluate_cost_random(trajectories, k_values):
     # avg_t_costs = []
     seeds = [10, 20, 30]
     for k in k_values:
-        print("RANDOM")
-        print("length", len(trajectories))
-        print("k", k)
+        print("Length: ", len(trajectories))
+        print("k: ", k)
         costs = []
         # t_costs = []
         for j in range(3):
@@ -235,8 +232,8 @@ def evaluate_cost_optimized(trajectories, k_values):
     seeds = [10, 20, 30]
     for k in k_values:
         print("OPTIMIZED")
-        print("length", len(trajectories))
-        print("k", k)
+        print("Length: ", len(trajectories))
+        print("k: ", k)
         costs = []
         # t_costs = []
         for j in range(3):
@@ -359,11 +356,11 @@ if __name__ == "__main__":
     for id in trajectories.keys():
         simplified_trajectories[id] = []
         simplification = task_4.TS_greedy(trajectories[id], ep)
-        print(len(simplification))
+        # print(len(simplification))
         simplified_trajectories[id] = simplification
        
    
-   
+   # Uncomment the section you'd like to run below
    
     ############################################################## GET AVG_COST VS CLUSTERS ###############################################
    
@@ -391,6 +388,7 @@ if __name__ == "__main__":
    
    
     ############################################################### GET AVG_COST vs ITERATIONS #############################################
+    
     # random_t_costs = evaluate_cost_random_PT2(simplified_trajectories)
     # optimized_t_costs = evaluate_cost_optimized_PT2(simplified_trajectories)
 
@@ -408,20 +406,20 @@ if __name__ == "__main__":
    
     ################################################################ GET CLUSTER TRAJECTORIES ################################################
    
-    k = 10
-    random.seed(10)  # Set seed for reproducibility
-    optimized_clusters, t_cost = optimized_lloyds(simplified_trajectories, k, 50)
+    # k = 10
+    # random.seed(10)  # Set seed for reproducibility
+    # optimized_clusters, t_cost = optimized_lloyds(simplified_trajectories, k, 50)
 
-    # Calculate and plot the center trajectories of optimized clusters
-    colors = ['b', 'g', 'r', 'c', 'm', 'y', 'k', 'pink', 'brown', 'purple']
-    for i, cluster in enumerate(optimized_clusters):
-        if len(cluster) != 0:
-            center_trajectory = task_4.center_approach_two(cluster)
-            x, y = zip(*center_trajectory)
-            plt.plot(x, y, color=colors[i], marker='o', linestyle='-', linewidth=2, markersize=5)
+    # # Calculate and plot the center trajectories of optimized clusters
+    # colors = ['b', 'g', 'r', 'c', 'm', 'y', 'k', 'pink', 'brown', 'purple']
+    # for i, cluster in enumerate(optimized_clusters):
+    #     if len(cluster) != 0:
+    #         center_trajectory = task_4.center_approach_two(cluster)
+    #         x, y = zip(*center_trajectory)
+    #         plt.plot(x, y, color=colors[i], marker='o', linestyle='-', linewidth=2, markersize=5)
 
-    plt.xlabel('X-axis')
-    plt.ylabel('Y-axis')
-    plt.title('Center Trajectories for Optimized Seeding (k=10)')
-    # plt.legend()
-    plt.show()
+    # plt.xlabel('X-axis')
+    # plt.ylabel('Y-axis')
+    # plt.title('Center Trajectories for Optimized Seeding (k=10)')
+    # # plt.legend()
+    # plt.show()
