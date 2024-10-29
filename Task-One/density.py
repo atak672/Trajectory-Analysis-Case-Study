@@ -171,10 +171,11 @@ if __name__ == "__main__":
 
     temp1 = time.time()
 
-    # r value for hubs
+    # r radius for each of the k hubs
     r = 8
+    k = 5
     #Call for hubs
-    array = hubs(p, 5,r)
+    array = hubs(p, k, r)
 
     # Timing mechanism
     temp2 = time.time()
