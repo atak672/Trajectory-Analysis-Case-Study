@@ -3,7 +3,8 @@
 ## Project Overview
 This project focuses on analyzing, simplifying, and clustering trajectory data to uncover patterns and optimize data processing. Using the GeoLife dataset, the project explores algorithms for identifying high-density hubs, simplifying trajectory paths, and clustering trajectories based on their similarity. Through these tasks, we aimed to balance **computational efficiency** and **accuracy**, experimenting with different techniques to find optimal solutions.
 
-**Compiled results and analysis** are available in a PowerPoint file located under the Anlysis folder
+
+**Compiled results and analysis are available in a PowerPoint file located under the Anlysis folder**
 
 ## **Project Structure**
 1. **Task 1: Hub Identification**
@@ -56,6 +57,8 @@ This project focuses on analyzing, simplifying, and clustering trajectory data t
   - Modify `r` and `k` values on lines 175–176 to adjust radius and number of hubs.  
   - Visualizations auto-generate after execution.
 
+--- 
+
 ### **Task Two: `greedy.py`**  
 - **Functions:**
   - `TS_greedy(T, my_epsilon)`: Simplifies trajectory points within error `my_epsilon`.
@@ -65,6 +68,8 @@ This project focuses on analyzing, simplifying, and clustering trajectory data t
   - `init()`: Initializes a line segment.
   - `minDistanceFromPoint()`: Calculates minimum distance from a point to the segment.
 
+---
+
 ### **Task Three: `task3.py`**  
 - **Key Functions:**
   - `calculate_distance(A, B)`: Computes Euclidean distance between two points.
@@ -72,6 +77,8 @@ This project focuses on analyzing, simplifying, and clustering trajectory data t
   - `make_histogram()`: Visualizes edge weights from optimal trajectory alignments.
 - **Main Execution:**  
   - Runs distance calculations and generates histograms. Close one plot to see the next.
+
+---
 
 ### **Task Four: `task_4.py`**  
 - **Key Functions:**
@@ -82,6 +89,8 @@ This project focuses on analyzing, simplifying, and clustering trajectory data t
   - **Section 1:** Works with raw trajectory data.  
   - **Section 2:** Simplifies trajectories based on epsilon values (0.03, 0.1, or 0.3) and re-evaluates results.  
   - Switch between sections by commenting/uncommenting relevant code.
+
+---
 
 ### **Task Five: `task_5.py`**  
 - **Functions:**
