@@ -1,5 +1,5 @@
 # Trajectory Analysis Case Study
-**Compiled results and analysis are available in a PowerPoint file located under the Analysis folder**
+**Compiled results and analyses are available in a PDF PowerPoint file located under the Analysis folder**
 
 
 ## Project Overview
